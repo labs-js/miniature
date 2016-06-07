@@ -5,7 +5,7 @@ module.exports =
     var api = express.Router();
 
     // this function returns the elements inside the books directory
-    app.get('/books',
+    app.get('/Books',
       function(req, res) {
         fs.readdir(config.directory, function(err, files) {
           var i,

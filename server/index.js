@@ -1,26 +1,34 @@
-var express = require('express');
-var morgan = require('morgan');
-var config = require('./config');
-var bodyParser = require('body-parser');
+var nconf = require('nconf');
+var async = require('async');
+var logger = require('winston');
+var server = require('./config/initializers/server');
 
-var app = express();
+require('dotenv').load();
 
-// true for parse videos, images etc.
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+// Set up configs
+nconf.use('memory');
+// First load command line arguments
+nconf.argv();
+// Load environment variables
+nconf.env();
 
-app.use(bodyParser.json());
-app.use(morgan('dev'));
+// Load config file for the environment
+require('./config/enviroments/' + nconf.get('NODE_ENV'));
 
-var books = require('./books')(app, express, config);
-app.use('books', books);
+logger.info('[APP] Starting server initialization');
 
-app.listen(config.port,
-  function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('Listening port 3000');
-    }
-  });
+// Initialize Modules
+async.series([
+  // function initializeDBConnection(callback) {
+    // require('./config/initializers/database')(callback);
+  // },
+  function startServer(callback) {
+    server(callback);
+  }
+], function(err) {
+  if (err) {
+    logger.error('[APP] initialization failed', err);
+  } else {
+    logger.info('[APP] initialized SUCCESSFULLY');
+  }
+});
