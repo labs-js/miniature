@@ -1,9 +1,17 @@
 import React from "react";
-
+var t;
 export default class Login extends React.Component {
-  render() {
-    return (
-      <div className="panel panel-primary login">
+
+    signIn() {
+        // call sign in service and back in state
+        console.log("entro!");
+        console.log(arguments[2]);
+        t = arguments;
+    }
+
+    render() {
+        return (
+            <div className="panel panel-primary login">
       <div className="panel-heading">
           <h3 className="panel-title">Login</h3>
       </div>
@@ -13,9 +21,9 @@ export default class Login extends React.Component {
       <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1"/>
       <input type="password" className="form-control" placeholder="Password" aria-describedby="basic-addon1"/>
       </div>
-      <button type="button" class="btn btn-default">Sign in</button>
+      <button type="button" className="btn btn-default" onClick={this.signIn}>Sign in</button>
       </div>
       </div>
-    );
-  }
+        );
+    }
 }

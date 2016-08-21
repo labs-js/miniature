@@ -10,7 +10,6 @@ export default class App extends React.Component {
                 <div>
                     <h1>miniature</h1>
                     <NavBar />
-                <Login />
                 </div>
             );
         }
