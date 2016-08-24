@@ -6,7 +6,6 @@
   "dependencies": {
     "axios": "^0.13.1",
     "bootstrap": "^3.3.7",
-    "express": "^4.13.4",
     "lodash": "^4.2.1",
     "node-sass": "^3.8.0",
     "react": "^0.14.7",
