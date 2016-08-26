@@ -52,7 +52,7 @@ module.exports = {
         ]
     },
     sassLoader: {
-        includePaths: [path.resolve(__dirname, "./app/styles")]
+        includePaths: [path.resolve(__dirname, "./app/components/**/*.scss")]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
