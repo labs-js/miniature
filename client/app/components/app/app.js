@@ -1,7 +1,7 @@
 import React from "react";
 
-import NavBar from "./navbar";
-import Login from "./login/login";
+import NavBar from "../navbar";
+import Login from "../login/login";
 export default class App extends React.Component {
         render() {
             return (
