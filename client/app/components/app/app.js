@@ -1,15 +1,16 @@
 import React from "react";
+import Layout from "../layout/Layout";
 
-import NavBar from "../navbar";
-import Login from "../login/login";
-export default class App extends React.Component {
+require('./App.scss');
+
+class App extends React.Component {
         render() {
             return (
-                <div>
-                    <h1>miniature</h1>
-                    <NavBar />
-                    <Login />
+                <div className="app">
+                    <Layout />
                 </div>
             );
         }
 }
+
+export default App;
