@@ -1,0 +1,30 @@
+{
+  "name": "miniature",
+  "version": "0.0.1",
+  "description": "Find & Share books easily and nicely",
+  "main": "index.js",
+  "dependencies": {
+    "miniature-client": "file:client",
+    "server": "file:server"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Not Implemented yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labs-js/miniature.git"
+  },
+  "keywords": [
+    "books",
+    "react",
+    "node",
+    "express"
+  ],
+  "author": "labs-js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/labs-js/miniature/issues"
+  },
+  "homepage": "https://github.com/labs-js/miniature#readme"
+}
