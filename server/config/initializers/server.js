@@ -10,14 +10,19 @@ var morgan = require("morgan");
 var logger = require("winston");
 var app;
 
-var start =  function(cb) {
+var start = function(cb) {
   "use strict";
   // Configure express
   app = express();
 
   app.use(morgan("common"));
-  app.use(bodyParser.urlencoded({extended: true}));
-  app.use(bodyParser.json({type: "*/*"}));
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+  // app.use(bodyParser.json({
+    // type: "*/*",
+    // limit: "3000mb"
+  // }));
 
   logger.info("[SERVER] Initializing routes");
   require("../../app/routes/index")(app);

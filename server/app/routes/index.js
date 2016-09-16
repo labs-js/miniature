@@ -1,6 +1,7 @@
 var changeCase = require("change-case");
 var express = require("express");
 var routes = require("require-dir")();
+var multer = require("multer");
 
 module.exports = function(app) {
   "use strict";
@@ -10,7 +11,7 @@ module.exports = function(app) {
     var router = express.Router();
     console.log(routeName);
     // You can add some middleware here
-    // router.use(someMiddleware);
+    // router.use(multer);
 
     // Initialize the route to add its functionality to router
     require("./" + routeName)(router);
