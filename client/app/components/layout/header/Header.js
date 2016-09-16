@@ -5,10 +5,9 @@ require('./Header.scss');
 
 class Header extends React.Component {
 
-    render() {
+    render(){
         return (
             <div className="header">
-                <h3> This is the header </h3>
             </div>
         );
     }
