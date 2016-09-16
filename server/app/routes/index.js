@@ -3,11 +3,11 @@ var express = require("express");
 var routes = require("require-dir")();
 var multer = require("multer");
 
-module.exports = function(app) {
+module.exports = (app) => {
   "use strict";
 
   // Initialize all routes
-  Object.keys(routes).forEach(function(routeName) {
+  Object.keys(routes).forEach((routeName) => {
     var router = express.Router();
     console.log(routeName);
     // You can add some middleware here

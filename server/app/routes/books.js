@@ -4,7 +4,7 @@ var multer = require("multer"),
 
 
 
-module.exports = function(router) {
+module.exports = (router)=> {
   "use strict";
   var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -20,7 +20,7 @@ module.exports = function(router) {
     })
     // This will handle the url calls for /users/:user_id
   router.route("/:bookId")
-    .get(function(req, res, next) {
+    .get((req, res, next)=> {
       console.log("pase");
       // Return user
       return {

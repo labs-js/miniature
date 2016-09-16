@@ -20,8 +20,8 @@ var start = function(cb) {
     extended: true
   }));
   // app.use(bodyParser.json({
-    // type: "*/*",
-    // limit: "3000mb"
+  // type: "*/*",
+  // limit: "3000mb"
   // }));
 
   logger.info("[SERVER] Initializing routes");
@@ -30,7 +30,7 @@ var start = function(cb) {
   app.use(express.static(path.join(__dirname, "public")));
 
   // Error handler
-  app.use(function(err, req, res, next) {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.json({
       message: err.message,
