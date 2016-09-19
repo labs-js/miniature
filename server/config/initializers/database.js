@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 module.exports = function(cb) {
   // Handle mongo database stuff
   // TODO: change this string for future versions
-  mongoose.connect("mongodb://localhost/test");
+  mongoose.connect("mongodb://localhost/books");
 
   var db = mongoose.connection;
 
