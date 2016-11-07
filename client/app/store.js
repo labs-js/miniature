@@ -1,19 +1,18 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
+import logger from "redux-logger";
 
 // App Reducers
-import bookReducer from "./reducers/books";
+import reducer from "./reducers";
 
 // Combine Reducers
 var reducers = combineReducers({
-    bookReducer: bookReducer
+    // bookReducer: bookReducer
     // more if you want...
 });
 
 // Create Store
-var store = createStore(
+export default createStore(
     reducers,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk,logger())
 );
-
-export default store;

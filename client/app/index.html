@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta name="viewport" content="width=device-width">
-        <title>Index</title>
-        <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
-    </head>
-    <body>
-        <div id="app" />
-        <script src="bundle.js"></script>
-    </body>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>Index</title>
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        We are using node
+        <script>
+            document.write(process.versions.node)
+        </script>, Chromium
+        <script>
+            document.write(process.versions.chrome)
+        </script>, and Electron
+        <script>
+            document.write(process.versions.electron)
+        </script>.
+    </div>
+    <script>
+        (function() {
+            const script = document.createElement('script');
+            script.src = process.env.ENV === 'development' ? 'http://localhost:9000/dist/bundle.js' : './dist/bundle.js';
+            document.write(script.outerHTML);
+        }());
+    </script>
+</body>
+
 </html>
