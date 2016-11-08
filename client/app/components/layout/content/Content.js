@@ -14,7 +14,7 @@ var _extends = Object.assign || function(target) {
     return target;
 };
 
-// var axios = require('axios');
+var axios = require('axios');
 var accept = require('attr-accept');
 
 var content = React.createClass({
@@ -117,14 +117,14 @@ console.log("pase por aca y busco los archivos");
         data.append("file", files[0], files[0].name);
 
         // TODO set parameters in config file
-        // axios.post("http://localhost:4000/api/books", data).
-        // then((res) => {
-                // //TODO: ADD POPUP to handle messages
-                // console.log("UPLOADED!!");
-            // })
-            // .catch((err) => {
-                // console.log(err);
-            // });
+        axios.post("http://localhost:4000/api/books", data).
+        then((res) => {
+                //TODO: ADD POPUP to handle messages
+                console.log("UPLOADED!!");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     },
     render() {
         return React.createElement(
